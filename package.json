@@ -14,11 +14,14 @@
     "@expo/vector-icons": "^14.0.0",
     "@react-native-async-storage/async-storage": "^1.24.0",
     "@react-navigation/native": "^7.0.3",
+    "@tamagui/accordion": "^1.125.8",
     "@tamagui/animations-react-native": "^1.125.8",
     "@tamagui/font-inter": "^1.125.8",
+    "@tamagui/lucide-icons": "^1.125.8",
     "@tamagui/react-native-media-driver": "^1.125.8",
     "@tamagui/shorthands": "^1.125.8",
     "@tamagui/themes": "^1.125.8",
+    "tamagui": "^1.125.8",
     "expo": "^53.0.19",
     "expo-constants": "~17.1.4",
     "expo-font": "~13.3.2",
@@ -35,8 +38,7 @@
     "react-native-reanimated": "~3.17.4",
     "react-native-safe-area-context": "5.4.0",
     "react-native-screens": "~4.11.1",
-    "react-native-web": "^0.20.0",
-    "tamagui": "^1.125.8"
+    "react-native-web": "^0.20.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

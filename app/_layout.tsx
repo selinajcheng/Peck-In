@@ -21,7 +21,11 @@ export default function Layout() {
 
   return (
     <TamaguiProvider config={config}>
-      <Stack />
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }}/>
+        <Stack.Screen name="login" />
+        <Stack.Screen name="details" /> // may remove
+      </Stack>
     </TamaguiProvider>
   );
 }
