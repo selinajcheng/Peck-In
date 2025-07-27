@@ -1,9 +1,9 @@
-const { createAnimations } = require('@tamagui/animations-react-native');
-const { createInterFont } = require('@tamagui/font-inter');
-const { createMedia } = require('@tamagui/react-native-media-driver');
-const { shorthands } = require('@tamagui/shorthands');
-const { themes, tokens } = require('@tamagui/themes');
-const { createTamagui } = require('tamagui');
+import { createAnimations } from '@tamagui/animations-react-native';
+import { createInterFont } from '@tamagui/font-inter';
+import { createMedia } from '@tamagui/react-native-media-driver';
+import { shorthands } from '@tamagui/shorthands';
+import { themes, tokens } from '@tamagui/themes';
+import { createTamagui } from 'tamagui';
 
 const animations = createAnimations({
   bouncy: {
