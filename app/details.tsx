@@ -10,6 +10,7 @@ import Option from 'react-select';
 // 2) The form loads in real quick since the async is too fast for the setDoc function
 
 export default function Details(){
+
   const person = useAuth();
   const [doc, setDoc] = useState(null);
 
@@ -29,7 +30,7 @@ export default function Details(){
 
       return (
         <>
-          <DetailForm uid={person.user.uid} />
+          <DetailForm uid={person.user.uid} email={person.user.email} />
         </>
       )
     }
@@ -40,35 +41,12 @@ export default function Details(){
         </>
       )
     }
-
-
-
-/*
-      if (something!.first_name == null){
-        console.log("No first name");
-        return(
-          <>
-          <DetailForm uid={person.user!.uid}/>
-          </>
-        )
-      }
-
-      else{
-        console.log("Yes First name");
-        return(
-          <>
-          <DetailForm uid={person.user!.uid}/>
-          </>
-        )
-      }
-*/
   }
 }
 
 
 
-
-function Options (props: {value: string[]}){
+function options (props: {value: string[]}){
   const elements : any = [];
   for (const s in props.value){
     elements.push({value: props.value[s], label: props.value[s]});
@@ -77,7 +55,7 @@ function Options (props: {value: string[]}){
 }
 
 
-function DetailForm(props : {uid : string}) {
+function DetailForm(props : {uid : string, email: string|null}) {
   const[emplID, setEmplID] = useState("");
   const[firstname, setFirstname] = useState("");
    const[lastname, setLastname] = useState("");
@@ -86,26 +64,25 @@ function DetailForm(props : {uid : string}) {
     const[year, setYear] = useState("");
 
   const handleEvent = () => {
-    console.log("HELP");
     const userID = setDocument("users", props.uid, 
       {
         emplID: emplID,
         first_name: firstname,
         last_name: lastname,
+        email: props.email,
         major: [major],
         minor: [minor],
         year: year
       }
     );
-    console.log(userID);
   }
 
   const majors = ["Accounting", "Africana & Puerto Rican / Latino Studies", "Ancient Greek", "Anthropology", "Arabic", "Archaeology", "Art History", "Behavioral Neurobiology", "Bioinformatics", "Biology", "Biophysics", "Biological Sciences with Specialization in Biotechnology", "Chemistry",  "Childhood Education", "Chinese", "Classical Studies", "Computer Science", "Dance", "Earth Science Adolescent Education", "Economics", "English", "Environmental Studies", "Film", "French", "Geography", "German",  "Hebrew", "History", "Human Biology", "Italian", "Japanese", "Latin", "Latin American and Caribbean Studies", "Latin and Greek", "Mathematics", "Media Studies", "Medical Laboratory Sciences", "Music", "Nursing", "Nutrition and Food Sciences", "Nutrition and Wellness", "Philosophy", "Physics", "Political Science", "Psychology", "Public Health", "Religion", "Romance Languages", "Russian", "Social Studies Adolescent Education", "Sociology", "Spanish", "Spanish and Latin American Literature", "Statistics and Applied Mathematics", "Theatre", "Undecided", "Urban Studies", "Woman and Gender Studies"];
   const minors = majors.concat(["Asian American Studies", "Human Rights", "Linguistics", "Public Policy", "None"]);
   const years = ["Freshman", "Sophomore", "Junior", "Senior"];
-  const majEl = Options({value:majors});
-  const minEl = Options({value:minors});
-  const yearEl = Options({value:years});
+  const majEl = options({value:majors});
+  const minEl = options({value:minors});
+  const yearEl = options({value:years});
   return (
     <>
     <form onSubmit={handleEvent}>

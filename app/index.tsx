@@ -59,6 +59,10 @@ export default function Home() {
                     <Button>View Details Page</Button>
                   </Link>
 
+                  <Link href={`/event_creation?name=${user?.email}`} asChild>
+                    <Button>View Event Creation Page</Button>
+                  </Link>
+
                   <Button
                     onPress={handleLogOut}
                     backgroundColor="$red10"
