@@ -6,6 +6,7 @@ type ScreenContentProps = {
   title: string;
   path: string;
   children?: React.ReactNode;
+  titleStyle?: any;
 };
 
 export const ScreenContent = ({ title, path, children }: ScreenContentProps) => {

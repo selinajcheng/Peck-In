@@ -10,11 +10,19 @@ export default function LoginScreen() {
   const [isSignUp, setIsSignUp] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  // states for alerts
+  const [alertOpen, setAlertOpen] = useState(false);
+  const [alertTitle, setAlertTitle] = useState('');
+  const [alertMessage, setAlertMessage] = useState('');
+
   const handleAuth = async () => {
     let success = false;
 
     if (!email || !password) {
-      Alert.alert('Error', 'Please fill in all required fields');
+      // Alert.alert('Error', 'Please fill in all required fields');
+      setAlertTitle('Error');
+      setAlertMessage('Please fill in all required fields');
+      setAlertOpen(true);
       return;
     }
 
