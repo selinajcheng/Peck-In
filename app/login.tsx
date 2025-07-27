@@ -63,7 +63,7 @@ export default function LoginScreen() {
       setLoading(false);
 
       if (success) {
-        router.dismissTo('/(tabs)/');
+        router.dismissTo('/');
       }
     }
   };
