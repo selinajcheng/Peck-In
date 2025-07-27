@@ -20,7 +20,7 @@ export default function ProfileScreen() {
             <>
                 <Stack.Screen options={{ title: 'Profile' }} />
                 <Container>
-                    <YStack flex={1} justifyContent='center' alignItems='center'>
+                    <YStack flex={1} justifyContent="center" alignItems="center">
                         <Text>Loading...</Text>
                     </YStack>
                 </Container>
@@ -32,12 +32,12 @@ export default function ProfileScreen() {
         <>
             <Stack.Screen options={{ title: 'Profile' }} />
             <Container>
-                <YStack flex={1} justifyContent='center' gap="$4">
-                    <YStack alignItems='center' gap="$3">
+                <YStack flex={1} justifyContent="center" gap="$4">
+                    <YStack alignItems="center" gap="$3">
                         <H2>Profile</H2>
 
                         {isAuthenticated ? (
-                            <YStack gap="$3" alignItems='center'>
+                            <YStack gap="$3" alignItems="center">
                                 <Text fontSize="$6" color="$green10">
                                     ✓ You are signed in
                                 </Text>
@@ -54,14 +54,14 @@ export default function ProfileScreen() {
                                     onPress={handleLogOut}
                                     backgroundColor="$red10"
                                     pressStyle={{ backgroundColor: '$red9' }}>
-                                    <Text color="#ffffff">
+                                    <Text color="$white">
                                         Sign Out
                                     </Text>
                                 </Button>
                             </YStack>
                         ) : (
-                            <YStack gap="$3" alignItems='center'>
-                                <Text fontSize="$4" color="$gray10" textAlign='center'>
+                            <YStack gap="$3" alignItems="center">
+                                <Text fontSize="$4" color="$gray10" textAlign="center">
                                     Please sign in to view your profile.
                                 </Text>
                             </YStack>

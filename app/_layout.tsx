@@ -24,7 +24,8 @@ export default function Layout() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }}/>
         <Stack.Screen name="login" />
-        <Stack.Screen name="details" /> // may remove
+        <Stack.Screen name="details" /> 
+        {/* May remove details page */}
       </Stack>
     </TamaguiProvider>
   );
